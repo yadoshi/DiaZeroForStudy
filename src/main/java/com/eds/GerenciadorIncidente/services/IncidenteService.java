@@ -1,6 +1,7 @@
 package com.eds.GerenciadorIncidente.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,5 +17,10 @@ public class IncidenteService {
 	
 	public List<Incidente> findALL(){
 		return repository.findAll();
+	}
+	
+	public Incidente findById(Integer id) {
+		Optional<Incidente> obj = repository.findById(id);
+		return obj.get();
 	}
 }
