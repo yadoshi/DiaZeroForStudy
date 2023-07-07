@@ -27,4 +27,8 @@ public class IncidenteService {
 	public Incidente Insert(Incidente obj) {
 		return repository.save(obj);
 	}
+	
+	public void delete(Integer id) {
+		repository.deleteById(id);
+	}
 }
