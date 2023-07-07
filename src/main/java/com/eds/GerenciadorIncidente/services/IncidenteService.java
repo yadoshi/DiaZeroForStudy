@@ -31,4 +31,17 @@ public class IncidenteService {
 	public void delete(Integer id) {
 		repository.deleteById(id);
 	}
+	
+	public Incidente update(Integer id, Incidente obj) {
+		Incidente entity = repository.getReferenceById(id);
+		updateData(entity, obj);
+		return repository.save(entity);
+	}
+
+	private void updateData(Incidente entity, Incidente obj) {
+		entity.setName(obj.getName());
+		entity.setDescription_incident(obj.getDescription_incident());
+		entity.setUpdated_at(obj.getUpdated_at());
+		entity.setClosed_at(obj.getClosed_at());
+	}
 }
