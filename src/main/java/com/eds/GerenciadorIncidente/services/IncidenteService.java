@@ -23,4 +23,8 @@ public class IncidenteService {
 		Optional<Incidente> obj = repository.findById(id);
 		return obj.get();
 	}
+	
+	public Incidente Insert(Incidente obj) {
+		return repository.save(obj);
+	}
 }
