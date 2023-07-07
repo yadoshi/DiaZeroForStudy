@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.eds.GerenciadorIncidente.entities.Incidente;
 import com.eds.GerenciadorIncidente.repositories.IncidenteRepository;
+import com.eds.GerenciadorIncidente.services.exceptions.ResourceNotFoundException;
 
 @Service
 public class IncidenteService {
@@ -21,7 +22,7 @@ public class IncidenteService {
 	
 	public Incidente findById(Integer id) {
 		Optional<Incidente> obj = repository.findById(id);
-		return obj.get();
+		return obj.orElseThrow(() -> new ResourceNotFoundException(id));
 	}
 	
 	public Incidente Insert(Incidente obj) {
