@@ -11,6 +11,8 @@ import com.eds.GerenciadorIncidente.entities.Incidente;
 import com.eds.GerenciadorIncidente.repositories.IncidenteRepository;
 import com.eds.GerenciadorIncidente.services.exceptions.ResourceNotFoundException;
 
+import jakarta.persistence.EntityNotFoundException;
+
 @Service
 public class IncidenteService {
 
@@ -39,11 +41,14 @@ public class IncidenteService {
 	}
 	
 	public Incidente update(Integer id, Incidente obj) {
-		Incidente entity = repository.getReferenceById(id);
-		updateData(entity, obj);
-		return repository.save(entity);
+		try {
+			Incidente entity = repository.getReferenceById(id);
+			updateData(entity, obj);
+			return repository.save(entity);
+		} catch (EntityNotFoundException e) {
+			throw new ResourceNotFoundException(id);
+		}
 	}
-
 	private void updateData(Incidente entity, Incidente obj) {
 		entity.setName(obj.getName());
 		entity.setDescription_incident(obj.getDescription_incident());
