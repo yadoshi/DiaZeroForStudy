@@ -1,0 +1,21 @@
+@charset "UTF-8";
+*{margin: 0; padding: 0; box-sizing: border-box;}
+nav{height: 90px; color: #fff;}
+a{cursor: pointer; font-weight: bold;}
+.new-section{
+	min-height: 700px;
+	background-size: cover !important;
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 100%;
+	padding: 30px;
+	position: relative;
+}
+.wm{width: 50%; float: left;}
+.clear{clear: both;}
+.center{text-align: center;}
+.incidente-container{max-width: 1280px; padding: 2% 2%; margin: 0 auto; margin-top: 200px;}
+.texto-centro{color: black; font-size: 3em; font-family: 'Ubunto'; font-weight: bold;}
+.btn{width: 280px; color: #fff; border-radius: 10px; border: 3px solid#0A66C2; padding: 20px;}
+.botoes_incidente{padding: 2% 15%;}
+.btn:hover{color: #0A66C2; background-color: rgba(0,0,0,7);}

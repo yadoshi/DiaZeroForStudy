@@ -1,10 +1,6 @@
 package com.eds.GerenciadorIncidente.entities;
 
-import java.time.Instant;
 import java.util.Objects;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -20,19 +16,15 @@ public class Incidente {
 	private Integer id_incident;
 	private String name;
 	private String description_incident;
-	
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'", timezone = "GMT")
-	private Instant created_at;
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'", timezone = "GMT")
-	private Instant updated_at;
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'", timezone = "GMT")
-	private Instant closed_at;
+	private String created_at;
+	private String updated_at;
+	private String closed_at;
 	
 	public Incidente(){
 	}
 	
-	public Incidente(Integer id_incident, String name, String description_incident, Instant created_at, Instant updated_at,
-			Instant closed_at) {
+	public Incidente(Integer id_incident, String name, String description_incident, String created_at, String updated_at,
+			String closed_at) {
 		this.id_incident = id_incident;
 		this.name = name;
 		this.description_incident = description_incident;
@@ -65,27 +57,27 @@ public class Incidente {
 		this.description_incident = description_incident;
 	}
 
-	public Instant getCreated_at() {
+	public String getCreated_at() {
 		return created_at;
 	}
 
-	public void setCreated_at(Instant created_at) {
+	public void setCreated_at(String created_at) {
 		this.created_at = created_at;
 	}
 
-	public Instant getUpdated_at() {
+	public String getUpdated_at() {
 		return updated_at;
 	}
 
-	public void setUpdated_at(Instant updated_at) {
+	public void setUpdated_at(String updated_at) {
 		this.updated_at = updated_at;
 	}
 
-	public Instant getClosed_at() {
+	public String getClosed_at() {
 		return closed_at;
 	}
 
-	public void setClosed_at(Instant closed_at) {
+	public void setClosed_at(String closed_at) {
 		this.closed_at = closed_at;
 	}
 
