@@ -13,32 +13,10 @@
 </head>
 <body>
 	
-	<header>
-	
-	<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #0A66C2;">
-		<a class="navbar-brand" href="#">
-			<img src="img/logo-branco-horizontal.png" width="200px"/>
-		</a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMobile">
-				<span class="navbar-toggler-icon"></span>
-		</button>
+	<div th:replace="fragmentos/fragmentos :: cabecalho"></div>
+	<section id="btn_section" class="botoes_section" style="background-image: url('img/bg-index.jpg');">
 		
-		<div id="navMobile" class="navbar-collapse collapse justify-content-end">
-			
-			<a class="nav-item nav-link">Editar incidente</a>
-			<a class="nav-item nav-link">Consultar incidente</a>
-			<a class="nav-item nav-link">Alterar incidente</a>
-			<a class="nav-item nav-link btn-danger">Excluir incidente</a>
-			
-		</div>
-	</nav>
-		
-			
-	</header>
-	
-	<section class="new-section" style="background-image: url('img/bg-index.jpg');">
-		
-		<div class=" center incidente-container">
+		<div class="center incidente-container">
 			<h1 class="texto-centro">Sistema de gerenciamento de Incidentes</h1>
 		
 		<div class="botoes_incidente">
@@ -60,9 +38,11 @@
 		</div>
 	</section>
 	
+	<div th:replace="fragmentos/fragmentos :: rodape"></div>
 	
 	<script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
 	<script src="/webjars/bootstrap/js/bootstrap/min.js"></script>
+	<script src="js/newScript.js"></script>
 	
 </body>		
 </html>
