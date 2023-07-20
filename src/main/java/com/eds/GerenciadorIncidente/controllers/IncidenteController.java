@@ -12,8 +12,8 @@ public class IncidenteController {
 	@GetMapping("/editarIncidente")
 	public ModelAndView InserirIncidente(Incidente incidente) {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("Incidente/editarIncidente");
-		mv.addObject("Incidente", new Incidente());
+		mv.setViewName("incidente/editarIncidentes");
+		mv.addObject("incidente", new Incidente());
 		return mv;
 	}
 }
