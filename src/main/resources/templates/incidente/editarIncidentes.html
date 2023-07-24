@@ -15,8 +15,11 @@
 	<div th:replace="fragmentos/fragmentos :: cabecalho"></div>
 	
 	<div class="container" style="margin-top: 50px;"></div>
-	<h4  class="justify-content-center">Editar incidente</h4>
+	<div class="text-center">
+	<h4 style="margin-bottom: 50px;">Editar incidente</h4>
+	</div>
 	<hr>
+	<br>
 		<form id="myForm" method="post" action="/InsertIncidentes" th:object="${incidente}">
 			
 	    	<!-- Nome -->
@@ -38,13 +41,15 @@
 			</div>
 			
 			<div class="row">
-				<button id="botaoEditarIncidente" type="button" class="btn btn-success offset-md-4" style="margin-top: 10px;" onclick="getDataHoraAtual()">Editar incidente</button>
+				<button type="button" class="btn_index btn-success offset-md-4" style="margin-top: 10px; background-color: green" onclick="getDataHoraAtual()">Editar incidente</button>
 				&nbsp;&nbsp;&nbsp;&nbsp;
 				<input id="dataIncidente" th:field="*{created_at}" hidden>
-				<a class="btn btn-outline-danger" style="margin-top: 10px;">Voltar</a>
+				<a class="btn_index btn-outline-danger text-center" style="margin-top: 10px; color: black">Voltar</a>
 			</div>
 			 
 		</form>
 		<script src="js/editarDataIncidente.js"></script>
+		<script src="/webjars/jquery/3.6.4/jquery.min.js"></script>
+		<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>

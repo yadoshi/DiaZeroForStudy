@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=widht-device, initial-scale=1.0"/>
+  <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+  <title>+ Gerenciador Incidente</title>
+  <meta name="author" content="Yago"/>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://kit.fontawesome.com/006642858d.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,600&family=Ubuntu&family=Work+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+
+        <div th:replace="fragmentos/fragmentos :: cabecalho"></div>
+
+        <div class="container">
+
+          <h3>Últimos incidentes Adicionados</h3>
+          <hr>
+          <table class="table table-bordered table-hover">
+
+           <thead>
+                <th scope="col">Id</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Descrição</th>
+                <th scope="col">Data de criação</th>
+                <th scope="col">Data de atualização</th>
+                <th scope="col">Data de fechamento</th>
+                <th scope="col">Ação</th>
+
+           </thead>
+            <tbody>
+                <tr scope="row" th:each="incidentes : ${incidentesList}">
+                    <td th:text="${incidentes.id_incident}"></td>
+                    <td th:text="${incidentes.name}"></td>
+                    <td th:text="${incidentes.description_incident}"></td>
+                    <td th:text="${incidentes.created_at}"></td>
+                    <td th:text="${incidentes.updated_at}"></td>
+                    <td th:text="${incidentes.closed_at}"></td>
+
+                    <td>
+                        <a class="btn btn-primary" th:href="@{alterar/{id}(id=${incidentes.id_incident})}">
+                            <i class="fas fa-edit"></i> Alterar</a>
+
+                        <a class="btn btn-danger" th:href="@{excluir/{id}(id=${incidentes.id_incident})}">
+                            <i class="fas fa-times"></i> Excluir</a>
+                    </td>
+
+                </tr>
+            </tbody>
+
+          </table>
+
+        </div>
+
+
+  <script src="/webjars/jquery/3.6.4/jquery.min.js"></script>
+  <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
