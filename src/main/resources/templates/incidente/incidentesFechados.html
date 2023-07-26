@@ -31,7 +31,7 @@
 
                 </thead>
                 <tbody>
-                <tr scope="row" th:each="incidentes : ${incidentesList}">
+                <tr scope="row" th:each="incidentes : ${incidentesFechados}">
                     <td th:text="${incidentes.id_incident}"></td>
                     <td th:text="${incidentes.name}"></td>
                     <td th:text="${incidentes.description_incident}"></td>
@@ -45,10 +45,6 @@
 
                         <a class="btn btn-danger" th:href="@{excluir/{id}(id=${incidentes.id_incident})}">
                             <i class="fas fa-times"></i> Excluir</a>
-
-                        <a class="btn btn-success" th:href="@{fechar/{id}(id=${incidentes.id_incident})}">
-                            <i class="fas fa-times"></i> Fechar</a>
-                        </a>
                     </td>
 
                 </tr>

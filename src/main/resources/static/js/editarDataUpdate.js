@@ -13,9 +13,7 @@ function getDataHoraAtual() {
 console.log(all)
 
 var inputx = document.getElementById("dataIncidente")
-var inputy = document.getElementById("status")
 inputx.setAttribute("value", all)
-inputy.setAttribute("value", "ABERTO")
 
 console.log(all)
 document.getElementById("myForm").submit()

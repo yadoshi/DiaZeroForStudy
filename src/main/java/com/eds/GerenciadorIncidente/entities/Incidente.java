@@ -1,11 +1,14 @@
 package com.eds.GerenciadorIncidente.entities;
 
 import java.util.Objects;
+
+import com.eds.GerenciadorIncidente.Enums.Status;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+
 
 @Entity
 @Table(name = "tb_incidente")
@@ -14,23 +17,28 @@ public class Incidente {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id_incident;
+
 	private String name;
+
 	private String description_incident;
 	private String created_at;
 	private String updated_at;
 	private String closed_at;
-	
+
+	private String status;
+
 	public Incidente(){
 	}
 	
 	public Incidente(Integer id_incident, String name, String description_incident, String created_at, String updated_at,
-			String closed_at) {
+			String closed_at, String status) {
 		this.id_incident = id_incident;
 		this.name = name;
 		this.description_incident = description_incident;
 		this.created_at = created_at;
 		this.updated_at = updated_at;
 		this.closed_at = closed_at;
+		this.status = status;
 	}
 
 	public Integer getId_incident() {
@@ -80,6 +88,11 @@ public class Incidente {
 	public void setClosed_at(String closed_at) {
 		this.closed_at = closed_at;
 	}
+
+	public String getStatus(){ return status;}
+
+	public void setStatus(String status){this.status = status;}
+
 
 	@Override
 	public int hashCode() {

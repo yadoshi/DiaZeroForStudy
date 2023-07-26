@@ -56,4 +56,39 @@ public class IncidenteController {
 		return mv;
 	}
 
+	@GetMapping("/excluir/{id}")
+	public String excluirIncidente(@PathVariable("id") Integer id){
+		incidenterepositorio.deleteById(id);
+		return "redirect:/incidentes-adicionados";
+	}
+
+	@GetMapping("/filtroIncidente")
+	public ModelAndView filtroIncidentes(){
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("incidente/filtroIncidente");
+		return mv;
+	}
+
+	@GetMapping("incidentes-abertos")
+	public ModelAndView listaIncidentesAbertos(){
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("incidente/incidentesAbertos");
+		mv.addObject("incidentesAbertos", incidenterepositorio.fidByStatusAberto());
+		return mv;
+	}
+
+	@GetMapping("incidentes-fechados")
+	public ModelAndView listaIncidentesFechados(){
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("incidente/incidentesFechados");
+		mv.addObject("incidentesFechados", incidenterepositorio.fidByStatusFechado());
+		return mv;
+	}
+
+	/*@GetMapping("/fechar/{id}")
+	public String fechar(@PathVariable("id") Integer id){
+		incidenterepositorio.save
+		return "redirect:/incidentes-adicionados";
+	}
+*/
 }
