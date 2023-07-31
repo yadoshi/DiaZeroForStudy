@@ -8,11 +8,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.eds.GerenciadorIncidente.entities.Incidente;
 
 import java.net.http.HttpRequest;
+import java.util.List;
 
 @Controller
 public class IncidenteController {
@@ -97,5 +99,19 @@ public class IncidenteController {
 		incidente.setStatus("Fechado");
 		incidenterepositorio.save(incidente);
 		return "redirect:/incidentes-adicionados";
+	}
+
+	@PostMapping("buscar-incidente")
+	public ModelAndView buscarIncidente(@RequestParam("nomePesquisa") String name){
+		ModelAndView mv = new ModelAndView();
+		List<Incidente> incidenteList;
+		if (name == null || name.trim().isEmpty()){
+			incidenteList = incidenterepositorio.findAll();
+		}else {
+			incidenteList = incidenterepositorio.findByNameContainingIgnoreCase(name);
+		}
+		mv.addObject("ListaDeIncidentes", incidenteList);
+		mv.setViewName("Incidente/pesquisaResultado");
+		return mv;
 	}
 }

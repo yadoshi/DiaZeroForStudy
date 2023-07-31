@@ -22,9 +22,9 @@
 <hr>
 <br>
 
-    <form method="post">
+    <form method="post" action="buscar-incidente" th:object="${incidente}">
         <div class="input-group col-6">
-            <input class="form-control" placeholder="Busque pelo nome do incidente..">
+            <input name="nomePesquisa" class="form-control" placeholder="Busque pelo nome do incidente.." >
             <div class="input-group-append">
                 <button type="submit" class="btn btn-outline-secondary">Pesquisar</button>
             </div>
