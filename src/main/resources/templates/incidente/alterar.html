@@ -20,50 +20,57 @@
 </div>
 <hr>
 <br>
-<form id="myForm" method="post" action="/alterar" th:object="${incidente}">
-	<input type="hidden" th:field="*{id_incident}">
+		<form id="myForm" method="post" action="/alterar" th:object="${incidente}">
+			<input type="hidden" th:field="*{id_incident}">
 
-	<!-- Nome -->
+			<!-- Nome -->
 
-	<div class="row">
-		<div class="col-md-6 form-group offset-md-3">
-			<label>Nome do Incidente</label>
-			<input class="form-control" placeholder="Ex: Bug no sistema" th:field="*{name}">
-		</div>
-	</div>
+			<div class="row">
+				<div class="col-md-6 form-group offset-md-3">
+					<label>Nome do Incidente</label>
+					<input class="form-control" placeholder="Ex: Bug no sistema" th:field="*{name}">
+				</div>
+			</div>
 
-	<!-- Descrição do incidente -->
+			<!-- Descrição do incidente -->
 
-	<div class="row">
-		<div class="col-md-6 form-group offset-md-3">
-			<label>Descrição</label>
-			<input class="form-control" placeholder="Ex: O que occoreu" th:field="*{description_incident}">
-		</div>
-	</div>
+			<div class="row">
+				<div class="col-md-6 form-group offset-md-3">
+					<label>Descrição</label>
+					<input class="form-control" placeholder="Ex: O que occoreu" th:field="*{description_incident}">
+				</div>
+			</div>
 
-	<!-- Data de Abertura -->
+			<!-- Data de Abertura -->
 
-	<div class="row">
-		<div class="col-md-6 form-group offset-md-3">
-			<label>Data de Abertura</label>
-			<input readonly="readonly" class="form-control" th:field="*{created_at}">
-		</div>
-	</div>
+			<div class="row">
+				<div class="col-md-6 form-group offset-md-3">
+					<label>Data de Abertura</label>
+					<input readonly="readonly" class="form-control" th:field="*{created_at}">
+				</div>
+			</div>
 
-	<!-- Data de alterção -->
+			<div class="row">
+				<div class="col-md-6 form-group offset-md-3">
+					<label>Status</label>
+					<input readonly="readonly" class="form-control" th:field="*{status}">
+				</div>
+			</div>
 
-	<div class="row text-center">
-		<button type="button" class="btn_index btn-success offset-md-4" style="margin-top: 10px; background-color: green" onclick="getDataHoraAtual()">Alterar incidente</button>
-		&nbsp;&nbsp;&nbsp;&nbsp;
-		<input id="dataIncidente" style="color: black" th:field="*{updated_at}" hidden>
-		<a class="btn_index btn-outline-danger" style="margin-top: 10px; color: black" >Voltar</a>
-	</div>
+			<!-- Data de alterção -->
+
+			<div class="row text-center">
+				<button type="button" class="btn_editar btn-success offset-md-4" style="margin-top: 10px; background-color: green" onclick="getDataHoraAtual()">Alterar incidente</button>
+				&nbsp;&nbsp;&nbsp;&nbsp;
+				<input id="dataIncidente" th:field="*{updated_at}" hidden>
+				<a class="btn_editar btn-outline-danger text-center" style="margin-top: 10px; color: black" th:href="incidentes-adicionados">Voltar</a>
+			</div>
 
 
 
-</form>
-<script src="/js/editarDataUpdate.js"></script>
-<script src="/webjars/jquery/3.6.4/jquery.min.js"></script>
-<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+		</form>
+		<script src="/js/editarDataUpdate.js"></script>
+		<script src="/webjars/jquery/3.6.4/jquery.min.js"></script>
+		<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>

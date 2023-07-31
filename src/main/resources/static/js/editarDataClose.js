@@ -1,4 +1,4 @@
-function getDataHoraAtual() {
+function getDataHoraAtual(id) {
 
     const data = new Date();
     const dia = String(data.getDate()).padStart(2, '0');
@@ -10,14 +10,17 @@ function getDataHoraAtual() {
 
 
     var all = dia + "/" + mes + "/" + ano + " " + horas + ":" + minutos + ":" + segundos
-console.log(all)
+    var caminho = "/fechar/" + id
 
-var inputx = document.getElementById("dataIncidente")
-var inputy = document.getElementById("status")
-inputx.setAttribute("value", all)
-inputy.setAttribute("value", "Aberto")
 
-console.log(all)
-document.getElementById("myForm").submit()
+
+    var form = document.getElementById("fechar")
+    form.setAttribute("action", caminho)
+
+    var input = document.getElementById("dataIncidente")
+    input.setAttribute("value", all)
+
+
+    document.getElementById("fechar").submit()
 
 }

@@ -41,11 +41,11 @@
 			</div>
 			
 			<div class="row">
-				<button type="button" class="btn_index btn-success offset-md-4" style="margin-top: 10px; background-color: green" onclick="getDataHoraAtual()">Editar incidente</button>
+				<button type="button" class="btn_editar btn-success offset-md-4" style="margin-top: 10px; background-color: green" onclick="getDataHoraAtual()">Salvar incidente</button>
 				&nbsp;&nbsp;&nbsp;&nbsp;
 				<input id="dataIncidente" th:field="*{created_at}" hidden>
 				<input id="status" th:field="*{status}" hidden>
-				<a class="btn_index btn-outline-danger text-center" style="margin-top: 10px; color: black">Voltar</a>
+				<a class="btn_editar btn-outline-danger text-center" style="margin-top: 10px; color: black" th:href="incidentes-adicionados">Voltar</a>
 			</div>
 		</form>
 		<script src="js/editarDataIncidente.js"></script>

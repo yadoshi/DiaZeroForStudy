@@ -32,25 +32,33 @@
     </form>
 
 <br>
-<div class="row" >
-    <div class="card" style="width: 288px">
-        <a th:href="@{/incidentes-fechados}"><img class="card-img-top" src="img/incidenteresolvido.png"/></a>
-    <div class="card-body">
-        <h5 class="card-title">Incidentes Fechados</h5>
-        <p class="card-text">Busque por todos os incidentes já fechados</p>
-        <a class="btn btn-outline-primary" th:href="@{/incidentes-fechados}">Clique Aqui!</a>
-    </div>
-    </div>
-        <div class="card ml-3" style="width: 288px">
-           <a th:href="@{/incidentes-abertos}"><img class="card-img-top" src="img/incidentesabertos.jpg"/></a>
-            <div class="card-body">
-            <h5 class="card-title">Incidentes em Aberto</h5>
-            <p class="card-text">Busque por todos os incidentes em Aberto</p>
-            <a class="btn btn-outline-primary" th:href="@{/incidentes-abertos}">Clique Aqui!</a>
-    </div>
+    <div class="row" >
+        <div class="card" style="width: 288px">
+            <a th:href="@{/incidentes-fechados}"><img class="card-img-top" src="img/incidenteresolvido.png"/></a>
+        <div class="card-body">
+            <h5 class="card-title">Incidentes Fechados</h5>
+            <p class="card-text">Busque por todos os incidentes já fechados</p>
+            <a class="btn btn-outline-primary" th:href="@{/incidentes-fechados}">Clique Aqui!</a>
         </div>
-</div>
-</div>
+        </div>
+            <div class="card ml-3" style="width: 288px">
+               <a th:href="@{/incidentes-abertos}"><img class="card-img-top" src="img/incidentesabertos.jpg"/></a>
+                <div class="card-body">
+                <h5 class="card-title">Incidentes em Aberto</h5>
+                <p class="card-text">Busque por todos os incidentes em Aberto</p>
+                <a class="btn btn-outline-primary" th:href="@{/incidentes-abertos}">Clique Aqui!</a>
+        </div>
+            </div>
+        <div class="card ml-3" style="width: 288px">
+            <a th:href="@{/incidentes-adicionados}"><img class="card-img-top" src="img/buscaincidentes.png"/></a>
+            <div class="card-body">
+                <h5 class="card-title">Todos os incidentes</h5>
+                <p class="card-text">Busque por todos os incidentes</p>
+                <a class="btn btn-outline-primary" th:href="@{/incidentes-adicionados}">Clique Aqui!</a>
+            </div>
+        </div>
+    </div>
+    </div>
 
 </body>
 </html>

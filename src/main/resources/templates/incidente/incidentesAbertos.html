@@ -16,7 +16,7 @@
 
         <div class="container">
 
-          <h3 style="margin-top: 10px;">Últimos incidentes Adicionados</h3>
+          <h3 style="margin-top: 10px;">Incidentes Abertos</h3>
           <hr>
             <table class="table table-bordered table-hover">
 
@@ -31,6 +31,7 @@
 
                 </thead>
                 <tbody>
+
                 <tr scope="row" th:each="incidentes : ${incidentesAbertos}">
                     <td th:text="${incidentes.id_incident}"></td>
                     <td th:text="${incidentes.name}"></td>
@@ -39,15 +40,23 @@
                     <td th:text="${incidentes.updated_at}"></td>
                     <td th:text="${incidentes.closed_at}"></td>
 
+
                     <td>
                         <a class="btn btn-primary" th:href="@{alterar/{id}(id=${incidentes.id_incident})}">
                             <i class="fas fa-edit"></i> Alterar</a>
 
                         <a class="btn btn-danger" th:href="@{excluir/{id}(id=${incidentes.id_incident})}">
                             <i class="fas fa-times"></i> Excluir</a>
+
+                        <form id="fechar" method="GET" action="">
+                            <a class="btn btn-success" th:attr="onclick=|getDataHoraAtual('${incidentes.id_incident}')|">
+                                <i class="fas fa-times"></i> Fechar</a>
+                                <input id="dataIncidente" name="dataIncidente" hidden>
+                        </form>
                     </td>
 
                 </tr>
+
                 </tbody>
 
             </table>
@@ -55,7 +64,7 @@
         </div>
         <script src="/webjars/jquery/3.6.4/jquery.min.js"></script>
         <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
-        <script src="js/editarDataIncidente.js"></script>
+        <script src="js/editarDataClose.js"></script>
 </body>
 
 </html>

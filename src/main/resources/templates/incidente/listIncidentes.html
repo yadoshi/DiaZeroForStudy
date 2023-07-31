@@ -46,9 +46,11 @@
                         <a class="btn btn-danger" th:href="@{excluir/{id}(id=${incidentes.id_incident})}">
                             <i class="fas fa-times"></i> Excluir</a>
 
-                        <a class="btn btn-success" th:href="@{fechar/{id}(id=${incidentes.id_incident})}">
-                            <i class="fas fa-times"></i> Fechar</a>
-                        </a>
+                        <form id="fechar" method="GET" action="">
+                            <a class="btn btn-success" th:attr="onclick=|getDataHoraAtual('${incidentes.id_incident}')|">
+                                <i class="fas fa-times"></i> Fechar</a>
+                            <input id="dataIncidente" name="dataIncidente" hidden>
+                        </form>
                     </td>
 
                 </tr>
@@ -59,7 +61,7 @@
         </div>
         <script src="/webjars/jquery/3.6.4/jquery.min.js"></script>
         <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
-        <script src="js/editarDataIncidente.js"></script>
+        <script src="js/editarDataClose.js"></script>
 </body>
 
 </html>

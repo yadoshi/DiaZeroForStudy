@@ -14,5 +14,4 @@ public interface IncidenteDao extends JpaRepository<Incidente, Integer> {
     @Query("select i from Incidente i where i.status = 'Fechado'")
     public List<Incidente> fidByStatusFechado();
 
-
 }

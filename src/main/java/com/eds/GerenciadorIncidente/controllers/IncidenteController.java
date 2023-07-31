@@ -1,6 +1,8 @@
 package com.eds.GerenciadorIncidente.controllers;
 
 import com.eds.GerenciadorIncidente.dao.IncidenteDao;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,6 +11,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.eds.GerenciadorIncidente.entities.Incidente;
+
+import java.net.http.HttpRequest;
 
 @Controller
 public class IncidenteController {
@@ -85,10 +89,13 @@ public class IncidenteController {
 		return mv;
 	}
 
-	/*@GetMapping("/fechar/{id}")
-	public String fechar(@PathVariable("id") Integer id){
-		incidenterepositorio.save
+	@GetMapping("/fechar/{id}")
+	public String fechar(@PathVariable("id") Integer id, HttpServletRequest request){
+		Incidente incidente = incidenterepositorio.findById(id).get();
+		String fechado = request.getParameter("dataIncidente");
+		incidente.setClosed_at(fechado);
+		incidente.setStatus("Fechado");
+		incidenterepositorio.save(incidente);
 		return "redirect:/incidentes-adicionados";
 	}
-*/
 }
