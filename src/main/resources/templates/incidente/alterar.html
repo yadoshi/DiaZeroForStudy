@@ -50,7 +50,7 @@
 				</div>
 			</div>
 
-			<div class="row">
+			<div class="row" hidden>
 				<div class="col-md-6 form-group offset-md-3">
 					<label>Status</label>
 					<input readonly="readonly" class="form-control" th:field="*{status}">
@@ -63,12 +63,10 @@
 				<button type="button" class="btn_editar btn-success offset-md-4" style="margin-top: 10px; background-color: green" onclick="getDataHoraAtual()">Alterar incidente</button>
 				&nbsp;&nbsp;&nbsp;&nbsp;
 				<input id="dataIncidente" th:field="*{updated_at}" hidden>
-				<a class="btn_editar btn-outline-danger text-center" style="margin-top: 10px; color: black" th:href="incidentes-adicionados">Voltar</a>
+				<a class="btn_editar btn-outline-danger text-center" style="margin-top: 10px; color: black" th:href="@{/incidentes-adicionados}">Voltar</a>
 			</div>
-
-
-
 		</form>
+
 		<script src="/js/editarDataUpdate.js"></script>
 		<script src="/webjars/jquery/3.6.4/jquery.min.js"></script>
 		<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>

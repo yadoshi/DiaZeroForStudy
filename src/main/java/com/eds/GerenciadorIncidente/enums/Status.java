@@ -1,4 +1,4 @@
-package com.eds.GerenciadorIncidente.Enums;
+package com.eds.GerenciadorIncidente.enums;
 
 public enum Status {
 

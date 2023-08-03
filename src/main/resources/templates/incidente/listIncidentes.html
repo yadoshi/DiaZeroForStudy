@@ -40,8 +40,11 @@
                     <td th:text="${incidentes.closed_at}"></td>
 
                     <td>
-                        <a class="btn btn-primary" th:href="@{alterar/{id}(id=${incidentes.id_incident})}">
-                            <i class="fas fa-edit"></i> Alterar</a>
+
+                        <button th:disabled="${#strings.equals(incidentes.status, 'Fechado')}" class="btn btn-primary">
+                            <a th:href="@{alterar/{id}(id=${incidentes.id_incident})}" style="color: white; font-weight: 400">
+                            <i class="fas fa-edit"></i> Alterar</button></a>
+
 
                         <a class="btn btn-danger" th:href="@{excluir/{id}(id=${incidentes.id_incident})}">
                             <i class="fas fa-times"></i> Excluir</a>

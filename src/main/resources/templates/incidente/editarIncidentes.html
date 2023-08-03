@@ -27,7 +27,7 @@
 			<div class="row">
 			<div class="col-md-6 form-group offset-md-3">
 				<label>Nome do Incidente</label>
-				<input class="form-control" placeholder="Ex: Bug no sistema" th:field="*{name}">
+				<input id="nome" class="form-control" placeholder="Ex: Bug no sistema" th:field="*{name}">
 			</div>
 			</div>
 			
@@ -36,7 +36,7 @@
 			<div class="row">
 			<div class="col-md-6 form-group offset-md-3">
 				<label>Descrição</label>
-				<input class="form-control" placeholder="Ex: O que occoreu" th:field="*{description_incident}">
+				<input id="descricao" class="form-control" placeholder="Ex: O que occoreu" th:field="*{description_incident}"/>
 			</div>
 			</div>
 			
@@ -45,7 +45,7 @@
 				&nbsp;&nbsp;&nbsp;&nbsp;
 				<input id="dataIncidente" th:field="*{created_at}" hidden>
 				<input id="status" th:field="*{status}" hidden>
-				<a class="btn_editar btn-outline-danger text-center" style="margin-top: 10px; color: black" th:href="incidentes-adicionados">Voltar</a>
+				<a class="btn_editar btn-outline-danger text-center" style="margin-top: 10px; color: black" th:href="@{/}">Voltar</a>
 			</div>
 		</form>
 		<script src="js/editarDataIncidente.js"></script>

@@ -2,7 +2,6 @@ package com.eds.GerenciadorIncidente.entities;
 
 import java.util.Objects;
 
-import com.eds.GerenciadorIncidente.Enums.Status;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

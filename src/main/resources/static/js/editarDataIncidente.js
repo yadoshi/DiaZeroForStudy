@@ -17,7 +17,11 @@ var inputy = document.getElementById("status")
 inputx.setAttribute("value", all)
 inputy.setAttribute("value", "Aberto")
 
-console.log(all)
-document.getElementById("myForm").submit()
+var nome = document.getElementById("nome")
+var desc = document.getElementById("descricao")
+
+if (nome.value <= 3 || desc.value <= 5){
+    alert("Os campos devem atender o tamanho mínimo de 3 para o nome e 5 para a descrição")
+}else document.getElementById("myForm").submit()
 
 }

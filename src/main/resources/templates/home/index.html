@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="pt-br" xmlns:th="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=width-device, initial-scale=1.0"/>
@@ -22,10 +22,12 @@
 		<div class="botoes_incidente">
 			
 		<div class="wm">
-			<a class="btn_index" th:href="@{/editarIncidente}">Editar incidente</a>
+			<a th:href="@{/editarIncidente}">
+			<h5 class="btn_index" style="color: black; margin-left: 60px">Editar incidente</h5></a>
 		</div>
 		<div class="wm">
-			<a class="btn_index justify-content-center" th:href="@{/filtroIncidente}">Consultar Incidente</a>
+			<a th:href="@{/filtroIncidente}">
+			<h5 class="btn_index justify-content-center" style="color: black">Consultar Incidente</h5></a>
 		</div>
 		<div class="clear"></div>
 		</div>
